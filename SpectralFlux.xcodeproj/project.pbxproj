@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C365F03816D1717B00067107 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C365F03716D1717B00067107 /* Foundation.framework */; };
+		C365F03D16D1717B00067107 /* SpectralFlux.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = C365F03C16D1717B00067107 /* SpectralFlux.h */; };
+		C365F03F16D1717B00067107 /* SpectralFlux.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F03E16D1717B00067107 /* SpectralFlux.m */; };
+		C365F04716D1717B00067107 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C365F04616D1717B00067107 /* SenTestingKit.framework */; };
+		C365F04916D1717B00067107 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C365F04816D1717B00067107 /* UIKit.framework */; };
+		C365F04A16D1717B00067107 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C365F03716D1717B00067107 /* Foundation.framework */; };
+		C365F04D16D1717B00067107 /* libSpectralFlux.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C365F03416D1717B00067107 /* libSpectralFlux.a */; };
+		C365F05316D1717B00067107 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C365F05116D1717B00067107 /* InfoPlist.strings */; };
+		C365F05616D1717B00067107 /* SpectralFluxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F05516D1717B00067107 /* SpectralFluxTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C365F04B16D1717B00067107 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C365F02C16D1717B00067107 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C365F03316D1717B00067107;
+			remoteInfo = SpectralFlux;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C365F03216D1717B00067107 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				C365F03D16D1717B00067107 /* SpectralFlux.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C365F03416D1717B00067107 /* libSpectralFlux.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSpectralFlux.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C365F03716D1717B00067107 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C365F03B16D1717B00067107 /* SpectralFlux-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpectralFlux-Prefix.pch"; sourceTree = "<group>"; };
+		C365F03C16D1717B00067107 /* SpectralFlux.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpectralFlux.h; sourceTree = "<group>"; };
+		C365F03E16D1717B00067107 /* SpectralFlux.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpectralFlux.m; sourceTree = "<group>"; };
+		C365F04516D1717B00067107 /* SpectralFluxTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectralFluxTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C365F04616D1717B00067107 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C365F04816D1717B00067107 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C365F05016D1717B00067107 /* SpectralFluxTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpectralFluxTests-Info.plist"; sourceTree = "<group>"; };
+		C365F05216D1717B00067107 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C365F05416D1717B00067107 /* SpectralFluxTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpectralFluxTests.h; sourceTree = "<group>"; };
+		C365F05516D1717B00067107 /* SpectralFluxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpectralFluxTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C365F03116D1717B00067107 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C365F03816D1717B00067107 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C365F04116D1717B00067107 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C365F04716D1717B00067107 /* SenTestingKit.framework in Frameworks */,
+				C365F04916D1717B00067107 /* UIKit.framework in Frameworks */,
+				C365F04A16D1717B00067107 /* Foundation.framework in Frameworks */,
+				C365F04D16D1717B00067107 /* libSpectralFlux.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C365F02B16D1717B00067107 = {
+			isa = PBXGroup;
+			children = (
+				C365F03916D1717B00067107 /* SpectralFlux */,
+				C365F04E16D1717B00067107 /* SpectralFluxTests */,
+				C365F03616D1717B00067107 /* Frameworks */,
+				C365F03516D1717B00067107 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C365F03516D1717B00067107 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C365F03416D1717B00067107 /* libSpectralFlux.a */,
+				C365F04516D1717B00067107 /* SpectralFluxTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C365F03616D1717B00067107 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C365F03716D1717B00067107 /* Foundation.framework */,
+				C365F04616D1717B00067107 /* SenTestingKit.framework */,
+				C365F04816D1717B00067107 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C365F03916D1717B00067107 /* SpectralFlux */ = {
+			isa = PBXGroup;
+			children = (
+				C365F03C16D1717B00067107 /* SpectralFlux.h */,
+				C365F03E16D1717B00067107 /* SpectralFlux.m */,
+				C365F03A16D1717B00067107 /* Supporting Files */,
+			);
+			path = SpectralFlux;
+			sourceTree = "<group>";
+		};
+		C365F03A16D1717B00067107 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C365F03B16D1717B00067107 /* SpectralFlux-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C365F04E16D1717B00067107 /* SpectralFluxTests */ = {
+			isa = PBXGroup;
+			children = (
+				C365F05416D1717B00067107 /* SpectralFluxTests.h */,
+				C365F05516D1717B00067107 /* SpectralFluxTests.m */,
+				C365F04F16D1717B00067107 /* Supporting Files */,
+			);
+			path = SpectralFluxTests;
+			sourceTree = "<group>";
+		};
+		C365F04F16D1717B00067107 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C365F05016D1717B00067107 /* SpectralFluxTests-Info.plist */,
+				C365F05116D1717B00067107 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C365F03316D1717B00067107 /* SpectralFlux */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C365F05916D1717B00067107 /* Build configuration list for PBXNativeTarget "SpectralFlux" */;
+			buildPhases = (
+				C365F03016D1717B00067107 /* Sources */,
+				C365F03116D1717B00067107 /* Frameworks */,
+				C365F03216D1717B00067107 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpectralFlux;
+			productName = SpectralFlux;
+			productReference = C365F03416D1717B00067107 /* libSpectralFlux.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		C365F04416D1717B00067107 /* SpectralFluxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C365F05C16D1717B00067107 /* Build configuration list for PBXNativeTarget "SpectralFluxTests" */;
+			buildPhases = (
+				C365F04016D1717B00067107 /* Sources */,
+				C365F04116D1717B00067107 /* Frameworks */,
+				C365F04216D1717B00067107 /* Resources */,
+				C365F04316D1717B00067107 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C365F04C16D1717B00067107 /* PBXTargetDependency */,
+			);
+			name = SpectralFluxTests;
+			productName = SpectralFluxTests;
+			productReference = C365F04516D1717B00067107 /* SpectralFluxTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C365F02C16D1717B00067107 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Precognitive Research, LLC";
+			};
+			buildConfigurationList = C365F02F16D1717B00067107 /* Build configuration list for PBXProject "SpectralFlux" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = C365F02B16D1717B00067107;
+			productRefGroup = C365F03516D1717B00067107 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C365F03316D1717B00067107 /* SpectralFlux */,
+				C365F04416D1717B00067107 /* SpectralFluxTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C365F04216D1717B00067107 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C365F05316D1717B00067107 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C365F04316D1717B00067107 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C365F03016D1717B00067107 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C365F03F16D1717B00067107 /* SpectralFlux.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C365F04016D1717B00067107 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C365F05616D1717B00067107 /* SpectralFluxTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C365F04C16D1717B00067107 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C365F03316D1717B00067107 /* SpectralFlux */;
+			targetProxy = C365F04B16D1717B00067107 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C365F05116D1717B00067107 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C365F05216D1717B00067107 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C365F05716D1717B00067107 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C365F05816D1717B00067107 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C365F05A16D1717B00067107 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SpectralFlux.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpectralFlux/SpectralFlux-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C365F05B16D1717B00067107 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/SpectralFlux.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpectralFlux/SpectralFlux-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C365F05D16D1717B00067107 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpectralFlux/SpectralFlux-Prefix.pch";
+				INFOPLIST_FILE = "SpectralFluxTests/SpectralFluxTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		C365F05E16D1717B00067107 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpectralFlux/SpectralFlux-Prefix.pch";
+				INFOPLIST_FILE = "SpectralFluxTests/SpectralFluxTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C365F02F16D1717B00067107 /* Build configuration list for PBXProject "SpectralFlux" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C365F05716D1717B00067107 /* Debug */,
+				C365F05816D1717B00067107 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C365F05916D1717B00067107 /* Build configuration list for PBXNativeTarget "SpectralFlux" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C365F05A16D1717B00067107 /* Debug */,
+				C365F05B16D1717B00067107 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C365F05C16D1717B00067107 /* Build configuration list for PBXNativeTarget "SpectralFluxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C365F05D16D1717B00067107 /* Debug */,
+				C365F05E16D1717B00067107 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C365F02C16D1717B00067107 /* Project object */;
+}
