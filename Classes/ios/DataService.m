@@ -7,7 +7,6 @@
 //
 
 #import "DataService.h"
-#import "SynthesizeSingleton.h"
 
 @implementation DataService
 
@@ -16,7 +15,6 @@
 @synthesize persistentStoreCoordinator=__persistentStoreCoordinator;
 
 
-SYNTHESIZE_SINGLETON_FOR_CLASS(DataService)
 
 - (void) saveContext {
     [self saveContext: self.managedObjectContext];

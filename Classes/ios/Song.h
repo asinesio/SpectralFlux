@@ -7,33 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
-@class Waveform;
-@class WaveformGroup;
+@interface Song : NSObject<NSCoding> {
 
-@interface Song : NSManagedObject {
-@private
-    WaveformGroup *previousCachedWaveformGroup;
-    WaveformGroup *cachedWaveformGroup;
-    WaveformGroup *futureCachedWaveformGroup;
-    NSPredicate *waveformByFrameIndexPredicateTemplate;
 }
+
 @property (nonatomic, retain) NSString * artist;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSNumber * duration;
 @property (nonatomic, retain) NSNumber * beatsPerMinute;
 @property (nonatomic, retain) NSNumber * sampleRate;
-@property (nonatomic, retain) NSNumber * complete;
-@property (nonatomic, retain) NSSet* waveformGroups;
+@property (nonatomic) BOOL complete;
+@property (nonatomic, retain) NSNumber * waveformCount;
 
-- (void) addWaveform: (Waveform *) waveform withContext: (NSManagedObjectContext *) context;
-- (void) clearWithContext: (NSManagedObjectContext *) context;
-- (long) waveformCount;
-- (Waveform *) getWaveformAtIndex: (unsigned long) index withContext: (NSManagedObjectContext *) context;
-@end
-
-@interface Song (SongAccessors) 
-- (void) addWaveformGroupsObject: (WaveformGroup *) value;
 @end

@@ -34,15 +34,14 @@
 
 @implementation ProcessSongOperation
 
-@synthesize song;
 @synthesize maxBinValue;
 @synthesize percentComplete;
 
-- (id)initWithSong: (NSManagedObjectID *)songIDToProcess {
+- (id)initWithSong: (AVURLAsset *)songURLToProcess {
     if ((self = [super init])) {
         // Create a managed object context in this thread
         
-        songID = [songIDToProcess retain];
+        songURL = [songURLToProcess retain];
           
         previousFloatSamples = (float *) malloc(FFT_SAMPLE_N * sizeof(float));
         percentComplete = 0.0f;
@@ -57,9 +56,6 @@
 
 - (void) dealloc {
     [super dealloc];
-    [song release]; song = nil;
-    [songID release]; songID = nil;
-    [managedObjectContext release]; managedObjectContext = nil;
     [recentWaveforms release]; recentWaveforms = nil;
     free(previousFloatSamples);
 }
@@ -152,16 +148,14 @@
             
             
             memcpy(previousFloatSamples, floatSamples, FFT_SAMPLE_N * sizeof(float));
-            Waveform *waveform = [[NSEntityDescription
-                                  insertNewObjectForEntityForName:@"Waveform"
-                                  inManagedObjectContext:managedObjectContext] retain];
+            Waveform *waveform = [[Waveform alloc] init];
             
             if (waveform != nil) {
               
                 waveform.flux = [NSNumber numberWithFloat:flux];
                 waveform.frameIndex = [NSNumber numberWithLong:currentFrameIndex];
-                [waveform setBinsFromFloatArray:floatSamples andBinCount:nOver2 withContext:managedObjectContext];
-                [song addWaveform:waveform withContext:managedObjectContext];
+                [waveform setBinsFromFloatArray:floatSamples andBinCount:nOver2];
+                //[song addWaveform:waveform withContext:managedObjectContext];
                 [self processAdditionalWaveformData:waveform];
             }
             //currentFrameIndex += FFT_SAMPLE_N;
@@ -177,7 +171,7 @@
     
 }
 
--(void) process: (AVURLAsset *) songURL {
+-(void) process {
     
     totalSamples = CMTimeGetSeconds(songURL.duration) * AUDIO_FRAMES_PER_SECOND;
     
@@ -227,10 +221,10 @@
         
         }
     } while (nextBuffer && ![self isCancelled]);
-    if (![self isCancelled] && [song.duration floatValue] > 0.0f) {
-        float beatsPerMinute = totalPeaks / ([song.duration floatValue] * 60.0f);
-        song.beatsPerMinute = [NSNumber numberWithFloat:beatsPerMinute];
-    }
+   // if (![self isCancelled] && [song.duration floatValue] > 0.0f) {
+   //     float beatsPerMinute = totalPeaks / ([song.duration floatValue] * 60.0f);
+   //     song.beatsPerMinute = [NSNumber numberWithFloat:beatsPerMinute];
+   // }
     
     [assetReader cancelReading];
     // release a lot of stuff
@@ -255,21 +249,21 @@
     [recentWaveforms addObject:newWaveform];
     if ([recentWaveforms count] > THRESHOLD_WINDOW_SIZE) {
         Waveform *waveform = [recentWaveforms objectAtIndex:THRESHOLD_WINDOW_SIZE];
-        if (waveform && ![waveform.isComplete boolValue]) {
+        if (waveform && !waveform.isComplete) {
             // calculate average flux
             [self calculateThresholdSpectralFlux:waveform];
             Waveform *previousWaveform = [recentWaveforms objectAtIndex:THRESHOLD_WINDOW_SIZE-1];
 
-            if (previousWaveform && ![previousWaveform.isPeak boolValue]) {
+            if (previousWaveform && !previousWaveform.isPeak) {
                 if ([previousWaveform getThresholdPeakValue] > [waveform getThresholdPeakValue]) {
                     // we have a peak
-                    waveform.isPeak = [NSNumber numberWithBool:YES];
+                    waveform.isPeak = YES;
                     totalPeaks++;
                 } else {
-                    waveform.isPeak = [NSNumber numberWithBool:NO];
+                    waveform.isPeak = NO;
                 }
             }
-            waveform.isComplete = [NSNumber numberWithBool:YES];
+            waveform.isComplete = YES;
         }
     }
     if ([recentWaveforms count] > THRESHOLD_WINDOW_SIZE * 2) {
@@ -282,20 +276,11 @@
     @try {
         
         NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
-        NSPersistentStoreCoordinator *coordinator = [DataService sharedDataService].persistentStoreCoordinator;
-        if (coordinator != nil) {
-            managedObjectContext = [[NSManagedObjectContext alloc] init];
-            [managedObjectContext setPersistentStoreCoordinator:coordinator];
-        }
         
         
         // Load our AVAsset object
         
-        self.song = (Song *) [managedObjectContext objectWithID:songID];
-        
-        [song clearWithContext:managedObjectContext];
-        
-        song.sampleRate = [NSNumber numberWithFloat:AUDIO_FRAMES_PER_SECOND];
+                
         percentComplete = 0.0f;
         maxBinValue = 0.0f;
         currentFrameIndex = 0;
@@ -308,23 +293,10 @@
             NSLog(@"Cancelled loading ProcessSongOperation prior to execution");
             return;
         }
-        [self process:[AVURLAsset URLAssetWithURL:[NSURL URLWithString:self.song.url] options:nil]];
-        NSLog(@"Saving to database...");
-        NSError *error = nil;
+        [self process];
+       
         
-        song.complete = [NSNumber numberWithBool:YES];
-        
-        if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error])
-        {
-            /*
-             Replace this implementation with code to handle the error appropriately.
-             
-             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-             */
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        } 
-
+       
         NSLog(@"Completed song processing operation.");
         [pool release];
     }

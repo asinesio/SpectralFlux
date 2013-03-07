@@ -15,8 +15,7 @@
 @interface SongProcessorService : NSObject {
     NSOperationQueue *queue;
     ProcessSongOperation *currentSongProcess;
-    Song *currentSong;
-
+    
     NSURL *currentSongAssetURL;
     BOOL doneProcessing;
     
@@ -28,8 +27,7 @@
 @property (nonatomic, retain) Song *currentSong;
 
 - (BOOL) mediaItemIsProtected: (MPMediaItem *) mediaItem;
-- (BOOL) startProcessingSong: (Song *) song withCompletionBlock: (void (^)(void))block;
+- (BOOL) startProcessingSong: (MPMediaItem *) song withCompletionBlock: (void (^)(void))block;
 - (void) finishProcessingSong;
 
-+ (SongProcessorService *) sharedSongProcessorService;
 @end

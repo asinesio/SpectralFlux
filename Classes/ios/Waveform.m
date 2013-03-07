@@ -7,31 +7,56 @@
 //
 
 #import "Waveform.h"
-#import "WaveformGroup.h"
-#import "Song.h"
 
 #define BIN_GROUP_SIZE 8
 #define NORMALIZE_FACTOR 200.0f
 
+#define FLUX_KEY @"flux"
+#define FRAME_KEY @"frame"
+#define PEAK_KEY @"peak"
+#define THRESHOLD_KEY @"threshold"
+#define BINS_KEY @"bins"
+#define COMPLETE_KEY @"complete"
+
+@interface Waveform (PrivateMethods)
+
+@end
 
 @implementation Waveform
-@dynamic flux;
-@dynamic frameIndex;
-@dynamic songIDAndFrameIndex;
-@dynamic isPeak;
-@dynamic isComplete;
-@dynamic threshold;
-@dynamic binData;
-@dynamic waveformGroup;
+@synthesize flux;
+@synthesize frameIndex;
+@synthesize isPeak;
+@synthesize threshold;
+@synthesize bins;
 
 -(id) init {
     self = [super init];
 	if (self==nil) return nil;
     
-    
-    
     return self;
 }
+
+-(id) initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super init]) {
+        self.flux = [aDecoder decodeObjectForKey:FLUX_KEY];
+        self.frameIndex = [aDecoder decodeObjectForKey:FRAME_KEY];
+        self.isPeak = [aDecoder decodeBoolForKey:PEAK_KEY];
+        self.isComplete = [aDecoder decodeBoolForKey:COMPLETE_KEY];
+        self.threshold = [aDecoder decodeObjectForKey:THRESHOLD_KEY];
+        self.bins = [aDecoder decodeObjectForKey:BINS_KEY];
+    }
+    return self;
+}
+
+-(void) encodeWithCoder:(NSCoder *)aCoder {
+    [aCoder encodeObject:self.flux forKey:FLUX_KEY];
+    [aCoder encodeObject:self.frameIndex forKey:FRAME_KEY];
+    [aCoder encodeBool:self.isPeak forKey:PEAK_KEY];
+    [aCoder encodeBool:self.isComplete forKey:COMPLETE_KEY];
+    [aCoder encodeObject:self.threshold forKey:THRESHOLD_KEY];
+    [aCoder encodeObject:self.bins forKey:BINS_KEY];
+}
+
 -(float) getThresholdPeakValue {
     if ([self.flux floatValue] > [self.threshold floatValue]) {
         return [self.flux floatValue] - [self.threshold floatValue];
@@ -40,57 +65,13 @@
     }
 }
 
-- (void) setBinsFromFloatArray:(float *) bins andBinCount: (unsigned short) binCount withContext: (NSManagedObjectContext *) managedObjectContext {
-    //NSMutableArray *array = [NSMutableArray arrayWithCapacity:binCount/BIN_GROUP_SIZE];
-    short currentBin = 0;
-    float *normalizedBins = malloc(sizeof(float) * BIN_COUNT);
-    
-    for (int i = 0; i < binCount; i += BIN_GROUP_SIZE) {
-        float sum = 0;
-        short binSize = 0;        
-        for (int j = 0; (j < BIN_GROUP_SIZE) && (i + j < binCount); j++) {
-            sum += bins[i+j];
-            binSize++;
-        }
-        if (binSize > 0) {
-            float normalizedValue = sum / (binSize * NORMALIZE_FACTOR);
-            //NSLog(@"Original value: %4.4f normalized value: %1.4f", sum / binSize, normalizedValue);
-            normalizedValue = MIN(normalizedValue, 1.0f);
-            normalizedBins[currentBin] = normalizedValue;
-            
-            //Bin * bin = [[[NSEntityDescription
-            //   insertNewObjectForEntityForName:@"Bin"
-            //   inManagedObjectContext:managedObjectContext] retain] autorelease];
-            //bin.index = [NSNumber numberWithShort:currentBin];
-            //bin.value = [NSNumber numberWithFloat:normalizedValue];
-            //bin.waveform = self;
-        }
-        currentBin++;
+- (void) setBinsFromFloatArray:(float *) rawBins andBinCount: (unsigned short) binCount {
+    NSMutableArray *convertedBins = [NSMutableArray arrayWithCapacity:binCount];
+    for (int i = 0; i < binCount; i++) {
+        [convertedBins insertObject:[NSNumber numberWithFloat:rawBins[i]] atIndex:i];
     }
-    [self willChangeValueForKey:@"binData"];
-    self.binData = [NSData dataWithBytes:normalizedBins length:(sizeof(float) * BIN_COUNT)];
-    [self didChangeValueForKey:@"binData"];
-    free(normalizedBins);
+    self.bins = convertedBins;
 }
-
-- (float *) getBinArray {
-    
-    if (!binArray) {
-        [self willAccessValueForKey:@"binData"];
-        NSData * data = self.binData;
-        [self didAccessValueForKey:@"binData"];
-        binArray = malloc(sizeof(float) * BIN_COUNT);
-        [data getBytes:binArray length:sizeof(float) * BIN_COUNT];
-    }
-    return binArray;
-}
-
-- (void) didTurnIntoFault {
-    [super didTurnIntoFault];
-    if (binArray)
-        free(binArray);
-}
-
 
 
 @end

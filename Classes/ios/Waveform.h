@@ -6,27 +6,19 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
 #define BIN_COUNT 64
 
-@class WaveformGroup, Song;
+@interface Waveform : NSObject<NSCoding> {
 
-@interface Waveform : NSManagedObject {
-@private
-    float *binArray;
-    BOOL allocatedArray;
 }
 @property (nonatomic, retain) NSNumber * flux;
 @property (nonatomic, retain) NSNumber * frameIndex;
-@property (nonatomic, retain) NSNumber * isPeak;
+@property (nonatomic) BOOL isPeak;
 @property (nonatomic, retain) NSNumber * threshold;
-@property (nonatomic, retain) NSNumber * isComplete;
-@property (nonatomic, retain) NSData * binData;
-@property (nonatomic, retain) NSString * songIDAndFrameIndex;
-@property (nonatomic, retain) WaveformGroup * waveformGroup;
+@property (nonatomic, retain) NSArray * bins;
+@property (nonatomic) BOOL isComplete;
 
 - (float) getThresholdPeakValue;
-- (void) setBinsFromFloatArray:(float *) bins andBinCount: (unsigned short) binCount withContext: (NSManagedObjectContext *) managedObjectContext;
-- (float *) getBinArray;
+- (void) setBinsFromFloatArray:(float *) rawBins andBinCount: (unsigned short) binCount;
 @end

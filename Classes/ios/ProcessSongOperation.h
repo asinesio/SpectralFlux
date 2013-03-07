@@ -10,15 +10,8 @@
 #import <Accelerate/Accelerate.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
-#import <CoreData/CoreData.h>
-
-@class Song;
-
 
 @interface ProcessSongOperation : NSOperation {
-    NSManagedObjectContext *managedObjectContext;
-    NSManagedObjectID *songID;
-    Song *song;
     unsigned long currentFrameIndex;
 
     float *previousFloatSamples;
@@ -29,14 +22,14 @@
     int totalPeaks;
     
     NSMutableArray *recentWaveforms;
+    AVURLAsset *songURL;
     
 }
-@property (nonatomic, retain) Song *song;
 
 @property (nonatomic, readonly) SInt16 maxBinValue;
 @property (nonatomic, readonly) float percentComplete;  // progress, between 0 and 1
 
 
-- (id)initWithSong:(NSManagedObjectID *) songIDToProcess;
+- (id)initWithSong:(AVURLAsset *) songURLToProcess;
 
 @end

@@ -76,7 +76,6 @@
 		C365F06F16D1787F00067107 /* WaveformGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaveformGroup.m; path = ios/WaveformGroup.m; sourceTree = "<group>"; };
 		C365F08016D17F9500067107 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataService.h; path = ios/DataService.h; sourceTree = "<group>"; };
 		C365F08116D17F9500067107 /* DataService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DataService.m; path = ios/DataService.m; sourceTree = "<group>"; };
-		C365F08416D1807800067107 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SynthesizeSingleton.h; path = ios/SynthesizeSingleton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,7 +200,6 @@
 		C365F07F16D178AD00067107 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C365F08416D1807800067107 /* SynthesizeSingleton.h */,
 				C365F08016D17F9500067107 /* DataService.h */,
 				C365F08116D17F9500067107 /* DataService.m */,
 				C365F06116D1787F00067107 /* ProcessSongOperation.h */,
@@ -483,6 +481,7 @@
 				C365F05B16D1717B00067107 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C365F05C16D1717B00067107 /* Build configuration list for PBXNativeTarget "SpectralFluxTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +490,7 @@
 				C365F05E16D1717B00067107 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

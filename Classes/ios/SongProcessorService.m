@@ -7,13 +7,11 @@
 //
 
 #import "SongProcessorService.h"
-#import "SynthesizeSingleton.h"
 
 @implementation SongProcessorService
 
 @synthesize currentSong;
 
-SYNTHESIZE_SINGLETON_FOR_CLASS(SongProcessorService)
 
 /**
  * This code graciously donated by Jon Steinmetz of Pixel Research Labs.
@@ -56,14 +54,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(SongProcessorService)
 }
 
 // Returns YES if we can process the song, NO otherwise.
-- (BOOL) startProcessingSong: (Song *) songToProcess withCompletionBlock: (void (^)(void))block {
+- (BOOL) startProcessingSong: (MPMediaItem *) songToProcess withCompletionBlock: (void (^)(void))block {
     @synchronized(self) {
         //if (currentSongProcess == nil) {
         [currentSongProcess release];
         currentSongProcess = nil;
-        self.currentSong = songToProcess;
         
-        currentSongProcess = [[ProcessSongOperation alloc] initWithSong:[songToProcess objectID]];
+        currentSongProcess = [[ProcessSongOperation alloc] initWithSong:[songToProcess valueForProperty:MPMediaItemPropertyAssetURL]];
         
         currentSongCompletionBlock = [block copy];
         
