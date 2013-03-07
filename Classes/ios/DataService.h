@@ -7,20 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
-
+#import "Waveform.h"
 
 @interface DataService : NSObject {
     
 }
-@property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;
-@property (nonatomic, retain, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-
-+ (DataService *) sharedDataService;
-
-- (void) saveContext: (NSManagedObjectContext *) context;
-- (void) saveContext;
-- (NSURL *) applicationDocumentsDirectory;
+- (BOOL) isWriteComplete;
+- (void) appendWaveform: (Waveform *) waveform;
+- (Waveform *) getWaveformAtIndex: (NSNumber *)index;
 
 @end
