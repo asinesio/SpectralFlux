@@ -6,15 +6,10 @@
 //  Copyright 2011 Precognitive Research, LLC. All rights reserved.
 //
 
-#import "ProcessSongOperation.h"
-
 #import <AVFoundation/AVAudioSettings.h>
-
-
-//#import "FourierWaveform.h"
-
-#import "Waveform.h"
-#import "Song.h"
+#import "SFWaveform.h"
+#import "SFProcessSongOperation.h"
+#import "SFSong.h"
 #import "DataService.h"
 
 #define FFT_SAMPLE_N 1024
@@ -24,15 +19,15 @@
 //#define AUDIO_FRAMES_PER_SECOND 44100
 #define AUDIO_FRAMES_PER_SECOND 22050
 
-@interface ProcessSongOperation(privateMethods) 
+@interface SFProcessSongOperation(privateMethods) 
 -(void) processBuffer: (CMSampleBufferRef) sampleBuffer;
 -(void) process: (AVURLAsset *) songURL;
--(void) processAdditionalWaveformData: (Waveform *) waveform;
--(void) calculateThresholdSpectralFlux: (Waveform *) destinationWaveform;
+-(void) processAdditionalWaveformData: (SFWaveform *) waveform;
+-(void) calculateThresholdSpectralFlux: (SFWaveform *) destinationWaveform;
 -(void) main;
 @end
 
-@implementation ProcessSongOperation
+@implementation SFProcessSongOperation
 
 @synthesize maxBinValue;
 @synthesize percentComplete;
@@ -148,7 +143,7 @@
             
             
             memcpy(previousFloatSamples, floatSamples, FFT_SAMPLE_N * sizeof(float));
-            Waveform *waveform = [[Waveform alloc] init];
+            SFWaveform *waveform = [[SFWaveform alloc] init];
             
             if (waveform != nil) {
               
@@ -232,10 +227,10 @@
     [assetReaderOutput release];
 }
 
--(void) calculateThresholdSpectralFlux: (Waveform *) destinationWaveform {
+-(void) calculateThresholdSpectralFlux: (SFWaveform *) destinationWaveform {
     float mean = 0.0f;
     int count = 0;
-    for (Waveform *waveform in recentWaveforms) {
+    for (SFWaveform *waveform in recentWaveforms) {
         mean += [waveform.flux floatValue];
         count++;
     }
@@ -245,14 +240,14 @@
     }
 }
 
--(void) processAdditionalWaveformData: (Waveform *) newWaveform {
+-(void) processAdditionalWaveformData: (SFWaveform *) newWaveform {
     [recentWaveforms addObject:newWaveform];
     if ([recentWaveforms count] > THRESHOLD_WINDOW_SIZE) {
-        Waveform *waveform = [recentWaveforms objectAtIndex:THRESHOLD_WINDOW_SIZE];
+        SFWaveform *waveform = [recentWaveforms objectAtIndex:THRESHOLD_WINDOW_SIZE];
         if (waveform && !waveform.isComplete) {
             // calculate average flux
             [self calculateThresholdSpectralFlux:waveform];
-            Waveform *previousWaveform = [recentWaveforms objectAtIndex:THRESHOLD_WINDOW_SIZE-1];
+            SFWaveform *previousWaveform = [recentWaveforms objectAtIndex:THRESHOLD_WINDOW_SIZE-1];
 
             if (previousWaveform && !previousWaveform.isPeak) {
                 if ([previousWaveform getThresholdPeakValue] > [waveform getThresholdPeakValue]) {

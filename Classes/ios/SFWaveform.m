@@ -6,7 +6,7 @@
 //  Copyright (c) 2011 Precognitive Research, LLC. All rights reserved.
 //
 
-#import "Waveform.h"
+#import "SFWaveform.h"
 
 #define BIN_GROUP_SIZE 8
 #define NORMALIZE_FACTOR 200.0f
@@ -18,11 +18,11 @@
 #define BINS_KEY @"bins"
 #define COMPLETE_KEY @"complete"
 
-@interface Waveform (PrivateMethods)
+@interface SFWaveform (PrivateMethods)
 
 @end
 
-@implementation Waveform
+@implementation SFWaveform
 @synthesize flux;
 @synthesize frameIndex;
 @synthesize isPeak;
@@ -32,7 +32,6 @@
 -(id) init {
     self = [super init];
 	if (self==nil) return nil;
-    
     return self;
 }
 

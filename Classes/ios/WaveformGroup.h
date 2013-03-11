@@ -9,23 +9,23 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Song;
-@class Waveform;
+@class SFSong;
+@class SFWaveform;
 
 @interface WaveformGroup : NSManagedObject {
 @private
 }
 @property (nonatomic, retain) NSNumber * beginningFrameIndex;
 @property (nonatomic, retain) NSNumber * endingFrameIndex;
-@property (nonatomic, retain) Song * song;
+@property (nonatomic, retain) SFSong * song;
 @property (nonatomic, retain) NSSet * waveforms;
 
-- (BOOL) isWaveformEligibleForAddition: (Waveform *) waveform;
+- (BOOL) isWaveformEligibleForAddition: (SFWaveform *) waveform;
 
 @end
 
 @interface WaveformGroup (WaveformGroupAccessors)
 
-- (void)addWaveformsObject:(Waveform *)value;
+- (void)addWaveformsObject:(SFWaveform *)value;
 
 @end

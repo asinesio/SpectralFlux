@@ -7,14 +7,14 @@
 
 #import <Foundation/Foundation.h>
 #import <MediaPlayer/MediaPlayer.h>
-#import "ProcessSongOperation.h"
-#import "SongProcessorService.h"
+#import "SFProcessSongOperation.h"
+#import "SFSongProcessorService.h"
 
-@class Song;
+@class SFSong;
 
-@interface SongProcessorService : NSObject {
+@interface SFSongProcessorService : NSObject {
     NSOperationQueue *queue;
-    ProcessSongOperation *currentSongProcess;
+    SFProcessSongOperation *currentSongProcess;
     
     NSURL *currentSongAssetURL;
     BOOL doneProcessing;
@@ -24,7 +24,7 @@
 
 @property (nonatomic, readonly) float currentSongProgress;
 @property (nonatomic, readonly) SInt16 currentSongMaxBinValue;
-@property (nonatomic, retain) Song *currentSong;
+@property (nonatomic, retain) SFSong *currentSong;
 
 - (BOOL) mediaItemIsProtected: (MPMediaItem *) mediaItem;
 - (BOOL) startProcessingSong: (MPMediaItem *) song withCompletionBlock: (void (^)(void))block;

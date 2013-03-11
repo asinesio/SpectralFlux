@@ -9,7 +9,7 @@
 
 #define BIN_COUNT 64
 
-@interface Waveform : NSObject<NSCoding> {
+@interface SFWaveform : NSObject<NSCoding> {
 
 }
 @property (nonatomic, retain) NSNumber * flux;

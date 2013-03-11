@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C35FA5EF16E9A119004D5003 /* SFSong.m in Sources */ = {isa = PBXBuildFile; fileRef = C35FA5EE16E9A119004D5003 /* SFSong.m */; };
+		C35FA5F016E9A119004D5003 /* SFSong.m in Sources */ = {isa = PBXBuildFile; fileRef = C35FA5EE16E9A119004D5003 /* SFSong.m */; };
 		C365F03816D1717B00067107 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C365F03716D1717B00067107 /* Foundation.framework */; };
 		C365F04716D1717B00067107 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C365F04616D1717B00067107 /* SenTestingKit.framework */; };
 		C365F04916D1717B00067107 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C365F04816D1717B00067107 /* UIKit.framework */; };
@@ -14,16 +16,14 @@
 		C365F04D16D1717B00067107 /* libSpectralFlux.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C365F03416D1717B00067107 /* libSpectralFlux.a */; };
 		C365F05316D1717B00067107 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C365F05116D1717B00067107 /* InfoPlist.strings */; };
 		C365F05616D1717B00067107 /* SpectralFluxTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F05516D1717B00067107 /* SpectralFluxTests.m */; };
-		C365F07016D1787F00067107 /* ProcessSongOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06216D1787F00067107 /* ProcessSongOperation.m */; };
-		C365F07116D1787F00067107 /* ProcessSongOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06216D1787F00067107 /* ProcessSongOperation.m */; };
-		C365F07216D1787F00067107 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06416D1787F00067107 /* Song.m */; };
-		C365F07316D1787F00067107 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06416D1787F00067107 /* Song.m */; };
-		C365F07416D1787F00067107 /* SongProcessorService.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06616D1787F00067107 /* SongProcessorService.m */; };
-		C365F07516D1787F00067107 /* SongProcessorService.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06616D1787F00067107 /* SongProcessorService.m */; };
+		C365F07016D1787F00067107 /* SFProcessSongOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06216D1787F00067107 /* SFProcessSongOperation.m */; };
+		C365F07116D1787F00067107 /* SFProcessSongOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06216D1787F00067107 /* SFProcessSongOperation.m */; };
+		C365F07416D1787F00067107 /* SFSongProcessorService.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06616D1787F00067107 /* SFSongProcessorService.m */; };
+		C365F07516D1787F00067107 /* SFSongProcessorService.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06616D1787F00067107 /* SFSongProcessorService.m */; };
 		C365F07616D1787F00067107 /* SpectralFlux.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06916D1787F00067107 /* SpectralFlux.m */; };
 		C365F07716D1787F00067107 /* SpectralFlux.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06916D1787F00067107 /* SpectralFlux.m */; };
-		C365F07816D1787F00067107 /* Waveform.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06B16D1787F00067107 /* Waveform.m */; };
-		C365F07916D1787F00067107 /* Waveform.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06B16D1787F00067107 /* Waveform.m */; };
+		C365F07816D1787F00067107 /* SFWaveform.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06B16D1787F00067107 /* SFWaveform.m */; };
+		C365F07916D1787F00067107 /* SFWaveform.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06B16D1787F00067107 /* SFWaveform.m */; };
 		C365F07C16D1787F00067107 /* WaveformGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06F16D1787F00067107 /* WaveformGroup.m */; };
 		C365F07D16D1787F00067107 /* WaveformGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F06F16D1787F00067107 /* WaveformGroup.m */; };
 		C365F08216D17F9500067107 /* DataService.m in Sources */ = {isa = PBXBuildFile; fileRef = C365F08116D17F9500067107 /* DataService.m */; };
@@ -53,6 +53,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C35FA5EE16E9A119004D5003 /* SFSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFSong.m; path = ios/SFSong.m; sourceTree = "<group>"; };
 		C365F03416D1717B00067107 /* libSpectralFlux.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSpectralFlux.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C365F03716D1717B00067107 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C365F04516D1717B00067107 /* SpectralFluxTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectralFluxTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,16 +63,15 @@
 		C365F05216D1717B00067107 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C365F05416D1717B00067107 /* SpectralFluxTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpectralFluxTests.h; sourceTree = "<group>"; };
 		C365F05516D1717B00067107 /* SpectralFluxTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpectralFluxTests.m; sourceTree = "<group>"; };
-		C365F06116D1787F00067107 /* ProcessSongOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProcessSongOperation.h; path = ios/ProcessSongOperation.h; sourceTree = "<group>"; };
-		C365F06216D1787F00067107 /* ProcessSongOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProcessSongOperation.m; path = ios/ProcessSongOperation.m; sourceTree = "<group>"; };
-		C365F06316D1787F00067107 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Song.h; path = ios/Song.h; sourceTree = "<group>"; };
-		C365F06416D1787F00067107 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Song.m; path = ios/Song.m; sourceTree = "<group>"; };
-		C365F06516D1787F00067107 /* SongProcessorService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SongProcessorService.h; path = ios/SongProcessorService.h; sourceTree = "<group>"; };
-		C365F06616D1787F00067107 /* SongProcessorService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SongProcessorService.m; path = ios/SongProcessorService.m; sourceTree = "<group>"; };
+		C365F06116D1787F00067107 /* SFProcessSongOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFProcessSongOperation.h; path = ios/SFProcessSongOperation.h; sourceTree = "<group>"; };
+		C365F06216D1787F00067107 /* SFProcessSongOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFProcessSongOperation.m; path = ios/SFProcessSongOperation.m; sourceTree = "<group>"; };
+		C365F06316D1787F00067107 /* SFSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFSong.h; path = ios/SFSong.h; sourceTree = "<group>"; };
+		C365F06516D1787F00067107 /* SFSongProcessorService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFSongProcessorService.h; path = ios/SFSongProcessorService.h; sourceTree = "<group>"; };
+		C365F06616D1787F00067107 /* SFSongProcessorService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFSongProcessorService.m; path = ios/SFSongProcessorService.m; sourceTree = "<group>"; };
 		C365F06816D1787F00067107 /* SpectralFlux.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpectralFlux.h; sourceTree = "<group>"; };
 		C365F06916D1787F00067107 /* SpectralFlux.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpectralFlux.m; sourceTree = "<group>"; };
-		C365F06A16D1787F00067107 /* Waveform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Waveform.h; path = ios/Waveform.h; sourceTree = "<group>"; };
-		C365F06B16D1787F00067107 /* Waveform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Waveform.m; path = ios/Waveform.m; sourceTree = "<group>"; };
+		C365F06A16D1787F00067107 /* SFWaveform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFWaveform.h; path = ios/SFWaveform.h; sourceTree = "<group>"; };
+		C365F06B16D1787F00067107 /* SFWaveform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFWaveform.m; path = ios/SFWaveform.m; sourceTree = "<group>"; };
 		C365F06E16D1787F00067107 /* WaveformGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WaveformGroup.h; path = ios/WaveformGroup.h; sourceTree = "<group>"; };
 		C365F06F16D1787F00067107 /* WaveformGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WaveformGroup.m; path = ios/WaveformGroup.m; sourceTree = "<group>"; };
 		C365F08016D17F9500067107 /* DataService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataService.h; path = ios/DataService.h; sourceTree = "<group>"; };
@@ -189,10 +189,10 @@
 			children = (
 				C365F06E16D1787F00067107 /* WaveformGroup.h */,
 				C365F06F16D1787F00067107 /* WaveformGroup.m */,
-				C365F06A16D1787F00067107 /* Waveform.h */,
-				C365F06B16D1787F00067107 /* Waveform.m */,
-				C365F06316D1787F00067107 /* Song.h */,
-				C365F06416D1787F00067107 /* Song.m */,
+				C365F06A16D1787F00067107 /* SFWaveform.h */,
+				C365F06B16D1787F00067107 /* SFWaveform.m */,
+				C365F06316D1787F00067107 /* SFSong.h */,
+				C35FA5EE16E9A119004D5003 /* SFSong.m */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -202,10 +202,10 @@
 			children = (
 				C365F08016D17F9500067107 /* DataService.h */,
 				C365F08116D17F9500067107 /* DataService.m */,
-				C365F06116D1787F00067107 /* ProcessSongOperation.h */,
-				C365F06216D1787F00067107 /* ProcessSongOperation.m */,
-				C365F06516D1787F00067107 /* SongProcessorService.h */,
-				C365F06616D1787F00067107 /* SongProcessorService.m */,
+				C365F06116D1787F00067107 /* SFProcessSongOperation.h */,
+				C365F06216D1787F00067107 /* SFProcessSongOperation.m */,
+				C365F06516D1787F00067107 /* SFSongProcessorService.h */,
+				C365F06616D1787F00067107 /* SFSongProcessorService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -308,13 +308,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C365F07016D1787F00067107 /* ProcessSongOperation.m in Sources */,
-				C365F07216D1787F00067107 /* Song.m in Sources */,
-				C365F07416D1787F00067107 /* SongProcessorService.m in Sources */,
+				C365F07016D1787F00067107 /* SFProcessSongOperation.m in Sources */,
+				C365F07416D1787F00067107 /* SFSongProcessorService.m in Sources */,
 				C365F07616D1787F00067107 /* SpectralFlux.m in Sources */,
-				C365F07816D1787F00067107 /* Waveform.m in Sources */,
+				C365F07816D1787F00067107 /* SFWaveform.m in Sources */,
 				C365F07C16D1787F00067107 /* WaveformGroup.m in Sources */,
 				C365F08216D17F9500067107 /* DataService.m in Sources */,
+				C35FA5EF16E9A119004D5003 /* SFSong.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,13 +323,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C365F05616D1717B00067107 /* SpectralFluxTests.m in Sources */,
-				C365F07116D1787F00067107 /* ProcessSongOperation.m in Sources */,
-				C365F07316D1787F00067107 /* Song.m in Sources */,
-				C365F07516D1787F00067107 /* SongProcessorService.m in Sources */,
+				C365F07116D1787F00067107 /* SFProcessSongOperation.m in Sources */,
+				C365F07516D1787F00067107 /* SFSongProcessorService.m in Sources */,
 				C365F07716D1787F00067107 /* SpectralFlux.m in Sources */,
-				C365F07916D1787F00067107 /* Waveform.m in Sources */,
+				C365F07916D1787F00067107 /* SFWaveform.m in Sources */,
 				C365F07D16D1787F00067107 /* WaveformGroup.m in Sources */,
 				C365F08316D17F9500067107 /* DataService.m in Sources */,
+				C35FA5F016E9A119004D5003 /* SFSong.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

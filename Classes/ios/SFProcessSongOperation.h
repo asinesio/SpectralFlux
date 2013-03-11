@@ -1,6 +1,6 @@
 //
 //  ProcessSongOperation.h
-//  VTM_AViPodReader
+//  
 //
 //  Created by Andy Sinesio on 2/27/11.
 //  Copyright 2011 Precognitive Research, LLC. All rights reserved.
@@ -11,7 +11,7 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface ProcessSongOperation : NSOperation {
+@interface SFProcessSongOperation : NSOperation {
     unsigned long currentFrameIndex;
 
     float *previousFloatSamples;

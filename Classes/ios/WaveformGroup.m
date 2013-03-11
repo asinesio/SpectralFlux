@@ -7,8 +7,8 @@
 //
 
 #import "WaveformGroup.h"
-#import "Song.h"
-#import "Waveform.h"
+#import "SFSong.h"
+#import "SFWaveform.h"
 
 
 @implementation WaveformGroup
@@ -17,7 +17,7 @@
 @dynamic song;
 @dynamic waveforms;
 
-- (BOOL) isWaveformEligibleForAddition: (Waveform *) waveform {
+- (BOOL) isWaveformEligibleForAddition: (SFWaveform *) waveform {
     return (self.beginningFrameIndex <= waveform.frameIndex && self.endingFrameIndex >= waveform.frameIndex);
 }
 

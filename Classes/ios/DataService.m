@@ -44,11 +44,11 @@
     return self;
 }
 
--(void) appendWaveform:(Waveform *)waveform {
+-(void) appendWaveform:(SFWaveform *)waveform {
     //TODO implement
 }
 
--(Waveform *) getWaveformAtIndex:(NSNumber *)index {
+-(SFWaveform *) getWaveformAtIndex:(NSNumber *)index {
     //TODO implement this too
     return nil;
 }

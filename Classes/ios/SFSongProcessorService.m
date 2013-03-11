@@ -1,14 +1,14 @@
 //
 //  SongProcessorService.m
-//  VTM_AViPodReader
+//  
 //
 //  Created by Andy Sinesio on 2/27/11.
 //  Copyright 2011 Precognitive Research, LLC. All rights reserved.
 //
 
-#import "SongProcessorService.h"
+#import "SFSongProcessorService.h"
 
-@implementation SongProcessorService
+@implementation SFSongProcessorService
 
 @synthesize currentSong;
 
@@ -60,7 +60,7 @@
         [currentSongProcess release];
         currentSongProcess = nil;
         
-        currentSongProcess = [[ProcessSongOperation alloc] initWithSong:[songToProcess valueForProperty:MPMediaItemPropertyAssetURL]];
+        currentSongProcess = [[SFProcessSongOperation alloc] initWithSong:[songToProcess valueForProperty:MPMediaItemPropertyAssetURL]];
         
         currentSongCompletionBlock = [block copy];
         
